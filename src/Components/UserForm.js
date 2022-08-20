@@ -33,7 +33,7 @@ const UserForm = () => {
 
           onSubmit:values=>{
 
-            fetch('http://localhost:5000/user', {
+            fetch('https://thawing-crag-43400.herokuapp.com/user', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

@@ -5,7 +5,7 @@ const Users = () => {
     const [users, setUsers] = useState([])
 
     useEffect( () =>{
-        const url = 'http://localhost:5000/user'
+        const url = 'https://thawing-crag-43400.herokuapp.com/user'
         fetch(url)
         .then(res => res.json())
         .then(data => setUsers(data))
@@ -24,3 +24,4 @@ const Users = () => {
 };
 
 export default Users
+
