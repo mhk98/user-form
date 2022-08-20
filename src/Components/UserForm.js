@@ -1,5 +1,6 @@
 import { useFormik } from 'formik';
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import Users from './Users';
 
@@ -54,9 +55,13 @@ const UserForm = () => {
 
     })
     return (
+
+        // User Registration Form
+
         <div className='items-left'>
-            <h3 className='text-left ml-12 font-bold mt-4'>Personal Details</h3>
-            <form onSubmit={registrationForm.handleSubmit}>
+
+        <h3 className='text-left ml-12 font-bold mt-4'>Personal Details</h3>
+        <form onSubmit={registrationForm.handleSubmit}>
        
 
         <div className='flex justify-around mt-4'>
@@ -142,6 +147,8 @@ const UserForm = () => {
         </div>
         </div>
 
+        Contact Details Part
+
         <div className=''>
             <h3 className='font-bold text-left ml-12 mt-4'>Contact Details</h3>
 
@@ -205,7 +212,15 @@ const UserForm = () => {
 
         <div className='flex justify-around mt-4'>
         <div className='mr-16'><label htmlFor="address">Address</label>
-       <input className='border-2 rounded ml-4 w-80' type="text" name="address" id="" placeholder='Enter Address' /></div>
+       <input className='border-2 rounded ml-4 w-80' 
+       type="text" 
+       name="address" 
+       id="" 
+       placeholder='Enter Address' 
+       onChange={registrationForm.handleChange}
+        onBlur={registrationForm.handleBlur}
+        value={registrationForm.values.address}
+       /></div>
 
         <div>
         <label htmlFor="state">State</label>
@@ -373,7 +388,7 @@ const UserForm = () => {
             
         </div>
 
-       <a className='btn bg-white text-red-500 border border-red-500 ml-80'>Cancel</a>
+       <Link to='/cancel' className='btn bg-white text-red-500 border border-red-500 ml-80'>Cancel</Link>
        <button className='bg-[#2F7D31] text-white btn ml-96' type="submit">Submit</button>
      </form>
 
