@@ -1,12 +1,8 @@
 import { useFormik } from 'formik';
 import React from 'react';
 import { toast } from 'react-toastify';
-// import { useHistory } from "react-router-dom";
-// import axios from 'axios'
 
 const UserForm = () => {
-    // let history = useHistory();
-
     const registrationForm= useFormik({
 
         initialValues: {
@@ -51,22 +47,6 @@ const UserForm = () => {
             }
         })
 
-
-        // const AddCompany= e=> {
-        //     e.preventDefault();
-        //     axios.post('http://localhost:5000/user',values)
-        //     .then(res => {
-        //      if(res.data.status_code === 200){
-        //       //setUser(res.data.msg)
-        //       history.push("");
-        //      }
-             
-        //    })
-        //    .catch(err => {
-        //     toast.error("Couldnot post data")
-        //   }) 
-        //    }
-
           }
 
           
@@ -75,7 +55,7 @@ const UserForm = () => {
     return (
         <div className='items-left'>
             <h3 className='text-left ml-12 font-bold mt-4'>Personal Details</h3>
-            <form onSubmit={registrationForm}>
+            <form onSubmit={registrationForm.handleSubmit}>
        
 
         <div className='flex justify-around mt-4'>
