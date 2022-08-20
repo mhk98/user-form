@@ -1,12 +1,9 @@
 import { useFormik } from 'formik';
 import React from 'react';
 import { toast } from 'react-toastify';
-// import { useHistory } from "react-router-dom";
-// import axios from 'axios'
+import Users from './Users';
 
 const UserForm = () => {
-    // let history = useHistory();
-
     const registrationForm= useFormik({
 
         initialValues: {
@@ -46,26 +43,10 @@ const UserForm = () => {
         .then(res => res.json())
         .then(data =>{
             if(data){
-                toast('Thank you for successfully add a product')
+                toast('Thank you for successfully added user information')
                 
             }
         })
-
-
-        // const AddCompany= e=> {
-        //     e.preventDefault();
-        //     axios.post('http://localhost:5000/user',values)
-        //     .then(res => {
-        //      if(res.data.status_code === 200){
-        //       //setUser(res.data.msg)
-        //       history.push("");
-        //      }
-             
-        //    })
-        //    .catch(err => {
-        //     toast.error("Couldnot post data")
-        //   }) 
-        //    }
 
           }
 
@@ -75,7 +56,7 @@ const UserForm = () => {
     return (
         <div className='items-left'>
             <h3 className='text-left ml-12 font-bold mt-4'>Personal Details</h3>
-            <form onSubmit={registrationForm}>
+            <form onSubmit={registrationForm.handleSubmit}>
        
 
         <div className='flex justify-around mt-4'>
@@ -318,7 +299,7 @@ const UserForm = () => {
         /></div>
 
             <div className=''>
-        <label htmlFor="region">Region</label>
+        <label htmlFor="region">Religion</label>
         <select 
         name='region' 
         id='' 
@@ -395,6 +376,10 @@ const UserForm = () => {
        <a className='btn bg-white text-red-500 border border-red-500 ml-80'>Cancel</a>
        <button className='bg-[#2F7D31] text-white btn ml-96' type="submit">Submit</button>
      </form>
+
+        <div className='my-12'>
+        <Users></Users>
+        </div>
         </div>
     );
 };
