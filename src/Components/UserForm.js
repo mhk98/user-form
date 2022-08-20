@@ -1,6 +1,7 @@
 import { useFormik } from 'formik';
 import React from 'react';
 import { toast } from 'react-toastify';
+import Users from './Users';
 
 const UserForm = () => {
     const registrationForm= useFormik({
@@ -42,7 +43,7 @@ const UserForm = () => {
         .then(res => res.json())
         .then(data =>{
             if(data){
-                toast('Thank you for successfully add a product')
+                toast('Thank you for successfully added user information')
                 
             }
         })
@@ -298,7 +299,7 @@ const UserForm = () => {
         /></div>
 
             <div className=''>
-        <label htmlFor="region">Region</label>
+        <label htmlFor="region">Religion</label>
         <select 
         name='region' 
         id='' 
@@ -375,6 +376,10 @@ const UserForm = () => {
        <a className='btn bg-white text-red-500 border border-red-500 ml-80'>Cancel</a>
        <button className='bg-[#2F7D31] text-white btn ml-96' type="submit">Submit</button>
      </form>
+
+        <div className='my-12'>
+        <Users></Users>
+        </div>
         </div>
     );
 };
