@@ -147,8 +147,6 @@ const UserForm = () => {
         </div>
         </div>
 
-        Contact Details Part
-
         <div className=''>
             <h3 className='font-bold text-left ml-12 mt-4'>Contact Details</h3>
 
