@@ -9,7 +9,7 @@ const Users = () => {
         fetch(url)
         .then(res => res.json())
         .then(data => setUsers(data))
-    }, [])
+    }, [users])
     return (
         <div>
             <h2 className='text-3xl font-bold text-center my-8'>User Information</h2>
